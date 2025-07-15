@@ -82,9 +82,13 @@ The violin plot indicates that DistilBERT predictions had very high confidence s
 
 Based on the proportion of sentiment trends, we see that the sentiment fluctuated over time, with best resutls in 2015 (80% were positive). The discrepancy between positive and negative opinions was increasingly narrowed over years. As of 2022, which marked the so-called end of COVID-19 period, there were as many positive reviews as negative ones. The balance between pleasant and unpleasant experiences continued in the next three years.
 
-![alt-text-1](visuals/proportion_pos_uzantwerpen.png) ![alt-text-2](visuals/proportion_pos_uzbrussel.png)
+![alt-text](visuals/proportion_pos_uzantwerpen.png) 
 
-![alt-text-1](visuals/proportion_pos_uzleuvengasthuisberg.png) ![alt-text-2](visuals/uzleuvenpellenberg.png)
+![alt-text](visuals/proportion_pos_uzbrussel.png)
+
+![alt-text](visuals/proportion_pos_uzleuvengasthuiberg.png) 
+
+![alt-text](visuals/proportion_pos_uzleuvenpellenberg.png)
 
 The highest proportion of positive reviews at UZ Brussel, UZ Gent, UZ Leuven Gasthuisberg, UZ Leuven Pellenberg and UZ Antwerpen occured in 2017, 2015, 2016, 2017 and 2014 respectively. During COVID-19 pandemic, the proportion of positive reviews at UZ Gent and UZ Leuven Penllenberg decreased while fluctuating at the other hospitals.
 
@@ -94,10 +98,15 @@ The highest proportion of positive reviews at UZ Brussel, UZ Gent, UZ Leuven Gas
 
 Positive words related to personnel, like "friendly", "professional", "helpful", "attentive" and "team", and gratitude expressions, such as "thank" and "satisfied", show that patients and visitors appreciate staff's professionalism, kindness and teamwork. Positive reviews center on interpersonal qualities and professional care indicated the strength in patient-facing interactions.
 
+![alt-text](visuals/wc_sent_uzantwerpen.png) 
+
+![alt-text](visuals/wc_sent_uzbrussel.png)
 
 
 On the other hand, common negative words, including “waiting,” “hour,” “bad,” “pain,” “problem,” and “parking” highlight operational issues rather than clinical care. Negative reviews highlight recurring themes of waiting times and logistics (parking, communication delays), pointing to concrete areas for operational improvements.
 
+![alt-text](visuals/wc_sent_uzleuvengasthuisberg.png) 
 
+![alt-text](visuals/wc_sent_uzleuvenpellenberg.png)
 
-
+![alt-text](visuals/wc_sent_uzgent.png)

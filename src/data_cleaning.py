@@ -12,7 +12,7 @@ def extract_language(text):
         return match.group(1)
     return None
 
-def clean_date(date_series, reference_date=None):
+def clean_date(date_series, reference_date="2025-07-10"):
     if isinstance(reference_date, str):
         reference_date = pd.to_datetime(reference_date)
 
@@ -21,10 +21,10 @@ def clean_date(date_series, reference_date=None):
         return parse(x, settings={"RELATIVE_BASE": reference_date}) if x else None
 
     parsed_dates = date_series.apply(parse_date)
-    parsed_period = parsed_dates.dt.to_period("M")
+    parsed_period = parsed_dates.dt.year
     return parsed_period
 
 def keep_relevant_columns(df):
     df_clean = df.loc[:, ["d4r55", "rsqaWe", "kyuRq", "wiI7pd"]].copy()
-    df_clean.columns = ["reviewer", "date", "original_language", "content"]
+    df_clean.columns = ["reviewer", "year", "original_language", "content"]
     return df_clean

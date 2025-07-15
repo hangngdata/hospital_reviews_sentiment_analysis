@@ -44,14 +44,8 @@ def train_lda(corpus, dictionary, num_topics=4):
 
 def plot_topic_wordclouds(lda_model, num_topics, hospital_name):
     soft_colors = [
-    "#A6CEE3",  # soft blue
-    "#B2DF8A",  # soft green
-    "#FB9A99",  # soft red/pink
-    "#FDBF6F",  # soft orange
-    "#CAB2D6",  # soft purple
-    "#FFFF99",  # soft yellow
-    "#1F78B4",  # darker blue
-    "#33A02C",  # darker green
+        "#A6CEE3", "#B2DF8A", "#FB9A99", "#FDBF6F", 
+        "#CAB2D6", "#FFFF99", "#1F78B4", "#33A02C",
     ]
 
     fig, axes = plt.subplots(1, num_topics, figsize=(5 * num_topics, 6))
@@ -65,12 +59,7 @@ def plot_topic_wordclouds(lda_model, num_topics, hospital_name):
         def topic_color_func(*args, **kwargs):
             return soft_colors[topic_num % len(soft_colors)]
 
-        wc = WordCloud(
-            width=600,
-            height=600,
-            background_color='white'
-        ).generate_from_frequencies(topic_words)
-
+        wc = WordCloud(width=600, height=600, background_color='white').generate_from_frequencies(topic_words)
         wc = wc.recolor(color_func=topic_color_func)
 
         ax = axes[topic_num]
@@ -78,9 +67,24 @@ def plot_topic_wordclouds(lda_model, num_topics, hospital_name):
         ax.axis("off")
         ax.set_title(f"Topic {topic_num + 1}", fontsize=16, fontweight='bold')
 
-    plt.suptitle(hospital_name, fontsize=22, fontweight='bold', y=1.05)
+    plt.suptitle(
+        f"Most Frequent Words in Patient Reviews by Topic\n{hospital_name}", 
+        fontsize=22, 
+        fontweight='bold', 
+        y=1.05,
+        ha='center',
+        bbox=dict(boxstyle="round,pad=0.5", facecolor="whitesmoke", edgecolor="gray", alpha=0.8)
+    )
+
+    fig.text(
+        0.5, -0.1, 
+        "Topics extracted from Google Maps reviews using LDA topic modeling. Words sized by frequency within each topic.", 
+        ha='center', fontsize=12, style='italic'
+    )
+
     plt.tight_layout()
     plt.show()
+
 
 def perform_topic_modeling_by_hospital(df, hospital_name, custom_stopwords_lda, num_topics=4):
     df['clean_for_lda'] = df['content'].apply(clean_text_wordcloud_lda)

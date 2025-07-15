@@ -81,9 +81,10 @@ To investigate into the gap between the two models, let's look at the confusion 
 
 ![alt-text](visuals/vader_distilbert_confusion_matrix.png)
 
-![alt-text](visuals/distilbert_confidence.png)
 
 The violin plot indicates that DistilBERT predictions had very high confidence scores (close to 1) for both positive and negative sentiments, suggesting that the model was highly certain in its classifications.
+
+![alt-text](visuals/distilbert_confidence.png)
 
 -----
 

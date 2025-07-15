@@ -15,6 +15,8 @@ Next, each dataframe of individual hopsital was cleaned to retain only relevant 
 
 The final dataset ready for text mining and sentiment analysis consisted of 1830 reviews for all five hospitals in total and five columns: ``reviewer``, ``year``, ``original language``, ``content``, ``hospital``.
 
+-----
+
 ## Attention and Engagement from Patients
 Overal there were more and more reviews written over time on Google Maps. The sharp rise in the number of reviews started in 2021 and reached the peak in 2024.
 
@@ -24,27 +26,30 @@ Overal there were more and more reviews written over time on Google Maps. The sh
 
 Among the hospitals, UZ Brussels received the most reviews, with ≈180 reviews in 2024 while UZ Leuven Gasthuisberg, UZ Gent and UZ Antwerpen had ≈100 reviews in the same year. It seems that smaller hospital like UZ Leuven Pellenberg might have been visited less and thus, received fewer reviews.
 
-## What Did People Talk About?: Word clouds and Topic Modeling with LDA
+-----
+
+## What Did People Talk About?
 
 Text cleaning for word clouds and topic modeling included noise and stopword removal, number removal, normalization and tokenization. For each hopsital, word cloud was generated to identify most frequent words over reviews and topic modeling was implemented using Latent Dirichlet Allocation (LDA) to discover hidden topics within a collections of reviews.
 
 Positive adjectives (eg. "friendly", "professional", "nice", "great"), together with healthcare-related words (eg. "pain", "medical", "test", "treated", "help", "care") appeared as the most frequent terms across reviews for all hopsitals. "Thank" also consistently mentioned across the reviews.
 
-![alt-text-1](visuals/wc_uzbrussel.png) ![alt-text-2](visuals/wc_uzantwerpen.png)
+![alt-text-1](visuals/wc_uzbrussel.png) 
+
+![alt-text-2](visuals/wc_uzantwerpen.png)
 
 
 Time-related words (eg. "hour", "minute", "week", "month", "year", "wait") were also dominant in the corpus. Personel such as "nurse", "surgeon", "professor" were regualrly mentioned in the reviews in general.
 
-![alt-text-1](visuals/wc_uzleuvengasthuisberg.png) ![alt-text-2](visuals/wc_uzleuvenpellenberg.png)
+![alt-text-1](visuals/wc_uzleuvengasthuisberg.png) 
+
+![alt-text-2](visuals/wc_uzleuvenpellenberg.png)
 
 Regarding UZ Gent, "parking" was one of the most mentioned. There might be complaints as well, as negative adjectives such as "bad", "unfriendly" and "long" were frequently used.
 
 ![alt-text](visuals/wc_uzgent.png)
 
 Overall, word clouds hinted that there are mixed opinions about the hospital service quality and experiences. Hospital and healthcare-specific categories in staff, time and facilities also emerged as dominant topics that people talked about.
-
-
-
 
 For topic modeling, I trained a LDA model to uncover three hidden topics for each hospital. While some topics such as waiting, staff friendliness and expression of gratitude overlap across hopsitals, there are certain distinctive focal points at each hospital.
 
@@ -56,9 +61,13 @@ For topic modeling, I trained a LDA model to uncover three hidden topics for eac
 
 At UZ Brussel, long waiting times and frustrating experiences (topic 1) were prominent while at UZ Antwerpen, waiting and communication issues emerged more clearly (topic 3). Similar to word clouds, topic modeling showed mixed experiences of patients and visitors.
 
-![alt-text-1](visuals/lda_uzbrussel.png) ![alt-text-2](visuals/lda_uzantwerpen.png)
+![alt-text-1](visuals/lda_uzbrussel.png) 
 
-## What Did People Feel?: Sentiment Analysis with VADER and DistilBERT
+![alt-text-2](visuals/lda_uzantwerpen.png)
+
+-----
+
+## What Did People Feel?
 
 I employed lexicon and Transformers to identify the sentiment for each review. Valence Aware Dictionary and sEntiment Reasoner (VADER) is a lexicon-based model trained on social media texts (microblogs) that takes into account negation, intensifiers, emojis, emoticons and so on. This approach is fast due to no model training or finetuning required and generalizable. However, it required minor text preprocessing.
 
@@ -75,6 +84,8 @@ To investigate into the gap between the two models, let's look at the confusion 
 ![alt-text](visuals/distilbert_confidence.png)
 
 The violin plot indicates that DistilBERT predictions had very high confidence scores (close to 1) for both positive and negative sentiments, suggesting that the model was highly certain in its classifications.
+
+-----
 
 ## Sentiment Dynamics Over Time
 
@@ -94,6 +105,8 @@ The highest proportion of positive reviews at UZ Brussel, UZ Gent, UZ Leuven Gas
 
 ![alt-text](visuals/proportion_pos_uzgent.png)
 
+-----
+
 ## What Did They Said in Positive and Negative Reviews?
 
 Positive words related to personnel, like "friendly", "professional", "helpful", "attentive" and "team", and gratitude expressions, such as "thank" and "satisfied", show that patients and visitors appreciate staff's professionalism, kindness and teamwork. Positive reviews center on interpersonal qualities and professional care indicated the strength in patient-facing interactions.
@@ -101,7 +114,6 @@ Positive words related to personnel, like "friendly", "professional", "helpful",
 ![alt-text](visuals/wc_sent_uzantwerpen.png) 
 
 ![alt-text](visuals/wc_sent_uzbrussel.png)
-
 
 On the other hand, common negative words, including “waiting,” “hour,” “bad,” “pain,” “problem,” and “parking” highlight operational issues rather than clinical care. Negative reviews highlight recurring themes of waiting times and logistics (parking, communication delays), pointing to concrete areas for operational improvements.
 

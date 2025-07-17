@@ -132,4 +132,4 @@ On the other hand, common negative words, including “waiting,” “hour,” �
 - Target hospital extension: Expanding your search to other hospital of your interest.
 - Scraping more reviews: Considering scraping reviews on other social media platforms such as Facebook, Twitter and Reddit. One challenge would be being able to filter relevant content to the hospitals. Other scraping tools can also be leveraged such as scraping via APIs or web scraping packages.
 - For topic modeling and lexion-based sentiment analysis: Considering extending analysis to N-gram
-- Another interesting direction: comparing sentiments from patients and visitors with healthcare quality reports (eg. information on zorgkwaliteit.be) of respective hospitals. This may reveal the gap between certified quality and more self-report, on-the-ground experiences of patients.
+- Another interesting direction: comparing sentiments from patients and visitors with healthcare quality reports (eg. information on [zorgkwaliteit.be](https://www.zorgkwaliteit.be/)) of respective hospitals. This may reveal the gap between certified quality and more self-report, on-the-ground experiences of patients.
